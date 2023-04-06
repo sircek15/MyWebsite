@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sudoku Solver</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="main-content">
+            <div class="board-container">
+                <table>
+                    <script>
+                        for (let i = 0; i < 9; i++) {
+                            let w = "<tr class=\"row" + i + "\">";
+                            for (let j = 0; j < 9; j++) {
+                                w += "<td class=\"col" + j + "\"><input type=\"number\" id=\"" + i + j + "\" onchange=\"enterCell(this.id)\" min=0 max=9></td>";
+                            }
+                            w += "</tr>";
+                            document.write(w);
+                        }
+                    </script>
+                </table>
+            </div>
+            <div class="buttons-container">
+                <button type="button" class="solve" id="solve" onclick="solveButton()">SOLVE</button>
+                <button type="button" class="clear" id="clear" onclick="clearButton()">CLEAR</button>
+            </div>
+            <p class="info">&#128712 Simple sudoku solver made usin backtracking algorithm</p>
+        </div>
+    </body>
+</html>

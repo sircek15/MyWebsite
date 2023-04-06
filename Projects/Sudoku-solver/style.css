@@ -1,0 +1,112 @@
+:root {
+    --cell-size: min(10vw, 5vh);
+    --cell-border-width: 0.1vw;
+    --nav-height: 4vh;
+	--nav-li-width: 10vw;
+    --color1: #d5def5;
+	--color2: #8594e4;
+	--color3: #6643b5;
+	--color4: #430f58;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: var(--color1);
+    margin: 0;
+    padding: 0;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    margin: auto;
+    margin-top: calc(var(--nav-height)/2);
+}
+.buttons-container {
+    margin-top: calc(var(--nav-height)/2);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+table {
+    display: felx;
+    margin: auto;
+    padding: calc(2 * var(--cell-border-width));
+}
+tbody {
+    display: flex;
+    flex-direction: column;
+}
+tr {
+    display: flex;
+    flex-direction: row;
+}
+/*setting size of cells*/
+td {
+    margin: 0;
+    padding: 0;
+}
+/*the input part of the cells*/
+input {
+    height: var(--cell-size);
+    width: var(--cell-size);
+    text-align: center;
+    font-size: calc(var(--cell-size)/1.5);
+    margin: 0;
+    padding: 0;
+}
+/*remove arrow form input elements*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+/*design a board*/
+table {
+    background-color: var(--color4);
+}
+input {
+    border: 0 none;
+}
+td {
+    border: var(--cell-border-width) solid var(--color4);
+}
+.row2, .row5 {
+    border-bottom: calc(2*var(--cell-border-width)) solid var(--color4);
+}
+.col2, .col5 {
+    border-right: calc(3*var(--cell-border-width)) solid var(--color4);;
+}
+
+/*------------buttons------------*/
+.solve, .clear {
+    text-align: center;
+    height: var(--nav-height);
+    width: calc(var(--cell-size)*4);
+    border: none;
+    background-color: var(--color3);
+    color: var(--color1);
+    font-size: var(--nav-font-size);
+    border-radius: calc(var(--nav-height)/2);
+    box-shadow: 0 0.5vh var(--color4);
+    margin-right: calc(var(--cell-size)/2);
+    margin-left: calc(var(--cell-size)/2);
+    margin-bottom: calc(var(--nav-height)/2);
+}
+.solve:active, .clear:active {
+    margin-top: 0.5vh;
+    box-shadow: none;
+    text-shadow: 0 0 10px var(--color1);
+    margin-bottom: calc((var(--nav-height)/2)-0.5vh);
+}
+/*------------info-----------*/
+.info {
+    text-align: center;
+    width: calc(var(--cell-size)*9);
+    margin: auto;
+}
